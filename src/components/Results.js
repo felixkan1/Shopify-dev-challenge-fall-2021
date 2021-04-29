@@ -7,42 +7,51 @@ export class Result extends Component {
     super(props);
 
     this.state = {
-      searcTerm: '8+mile',
-      movies: null,
-      error: null
+      searchResult: null,
+      searchError: null
     }
+
   }
 
-  componentDidMount(){
-    getMovies(this.state.searcTerm)
-      .then((movies) => {
-        if(movies.Response === 'True'){
-          this.setState({
-            error: !movies.Response,
-            movies: movies.Search
-          });
-        }
-      });
+  //dont use componenet did mount
+  componentDidUpdate(prevProps){
+    if(this.props.searchTerm !== prevProps.searchTerm) {
+      const searchTerm = this.props.searchTerm.replace(/\s/g, '+');
+      getMovies(searchTerm)
+        .then((movies) => {
+          if(movies.Response === 'True'){
+            this.setState({
+              searchError: !movies.Response,
+              searchResult: movies.Search
+            });
+          }else {
+            this.setState({
+              searchError: "Invalid Search",
+              searchResult: null
+            })
+          }
+        });
+    }
+
   }
 
 
   render() {
-    const {movies, error, searcTerm} = this.state;
-
+    const {searchResult, searchError} = this.state;
+    const searchTerm = this.props.searchTerm;
 
     return (
-  
-        <div className='result-container'>
-          <h2>Results
-            {movies && <span> for "{searcTerm}"</span>}
-          </h2>
+      <div className='result-container'>
+        <h2>Results
+          {searchResult && <span> for "{searchTerm}"</span>}
+        </h2>
 
-          {/* Put loading screen hear */}
+        {/* Put loading screen here */}
 
-          {error && <p className='center-text'>Error loading</p>}
+        {searchError && <p className='center-text'>{searchError}</p>}
 
-          {movies && <MoviesList movies = {movies}/>}
-        </div>
+        {searchResult && <MoviesList movies = {searchResult}/>}
+      </div>
 
     )
   }

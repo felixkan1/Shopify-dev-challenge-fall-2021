@@ -1,0 +1,4 @@
+Results.js:
+1) 
+search something valid -> updates Results
+search something invalid -> prev results stay (should show nothing)
