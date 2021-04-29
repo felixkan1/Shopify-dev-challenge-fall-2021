@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {getMovies} from '../utils/api'
-
+import {MoviesList} from './MovieList'
 
 export class Result extends Component {
   constructor(props) {
@@ -50,28 +50,13 @@ export class Result extends Component {
 
         {searchError && <p className='center-text'>{searchError}</p>}
 
-        {searchResult && <MoviesList movies = {searchResult}/>}
+        {searchResult && <MoviesList 
+                            movies = {searchResult}
+                            buttonName = "Nominate"
+                          />
+        }
       </div>
 
     )
   }
-}
-
-//export this function?
-function MoviesList ({movies}) {
-  return(
-    <ul className='movie-list'>
-      {movies.map((movie, index) => {
-        const{Title, Year} = movie;
-
-        return (
-          <li className='movie-item' key={ Title }> 
-            { Title } ({ Year }) &nbsp; 
-            <button>Nominate</button>
-          </li>
-        );
-
-      })}
-    </ul>
-  );
 }

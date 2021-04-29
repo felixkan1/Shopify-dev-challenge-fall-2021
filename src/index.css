@@ -32,3 +32,8 @@ body {
 .movie-item {
   margin-bottom: 10px;
 }
+
+/* Results */
+.result-container {
+  max-width: 50%;
+}
