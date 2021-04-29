@@ -7,31 +7,62 @@ export class Result extends Component {
     super(props);
 
     this.state = {
+      searcTerm: '8+mile',
       movies: null,
       error: null
     }
   }
 
-
   componentDidMount(){
-    getMovies('boogie')
-      .then((m) => {
-        this.setState({
-          movies:m
-        })
-      })
+    getMovies(this.state.searcTerm)
+      .then((movies) => {
+        if(movies.Response === 'True'){
+          this.setState({
+            error: !movies.Response,
+            movies: movies.Search
+          });
+        }
+      });
   }
 
 
   render() {
-    const {movies} = this.state;
+    const {movies, error, searcTerm} = this.state;
+
 
     return (
-      <React.Fragment>
-        <h2>Result</h2>
-        <h3></h3>
-      </React.Fragment>
+  
+        <div className='result-container'>
+          <h2>Results
+            {movies && <span> for "{searcTerm}"</span>}
+          </h2>
+
+          {/* Put loading screen hear */}
+
+          {error && <p className='center-text'>Error loading</p>}
+
+          {movies && <MoviesList movies = {movies}/>}
+        </div>
+
     )
   }
 }
-//{movies && movies.Search[0].title}
+
+//export this function?
+function MoviesList ({movies}) {
+  return(
+    <ul className='movie-list'>
+      {movies.map((movie, index) => {
+        const{Title, Year} = movie;
+
+        return (
+          <li className='movie-item' key={ Title }> 
+            { Title } ({ Year }) &nbsp; 
+            <button>Nominate</button>
+          </li>
+        );
+
+      })}
+    </ul>
+  );
+}

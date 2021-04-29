@@ -5,9 +5,30 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
 .flex-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+/* Search Container */
+
+.search-container {
+  width: 100%;
+}
+
+
+/* Movie Container */
+
+.movie-item {
+  margin-bottom: 10px;
 }
