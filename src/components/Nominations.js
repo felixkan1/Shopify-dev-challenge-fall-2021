@@ -12,7 +12,7 @@ export class Nominations extends Component {
 
 
   handleClick(movie) {
-    console.log(movie)
+    this.props.onClick(movie);
   }
 
   render() {

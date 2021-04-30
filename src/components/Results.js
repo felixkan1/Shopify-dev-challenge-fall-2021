@@ -16,7 +16,7 @@ export class Result extends Component {
   }
 
   //dont use componenet did mount
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps) {
     //if condition may have to change to nominationlist change 
     if(this.props.searchTerm !== prevProps.searchTerm) {
       const searchTerm = this.props.searchTerm.replace(/\s/g, '+');
@@ -48,7 +48,7 @@ export class Result extends Component {
 
   render() {
     const {searchResult, searchError} = this.state;
-    const {searchTerm, nominatedMovies} = this.props;
+    const {searchTerm, nominatedMovies, disableAll} = this.props;
 
     return (
       <div className='result-container'>
@@ -65,6 +65,8 @@ export class Result extends Component {
                             nominatedMovies = {nominatedMovies}
                             buttonName = "Nominate"
                             onClick = {this.handleClick}
+                            resultList = {true}
+                            disableAll = {disableAll}
                           />
         }
       </div>
