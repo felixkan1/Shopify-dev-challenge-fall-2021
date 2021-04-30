@@ -1,15 +1,36 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {MoviesList} from './MovieList';
 
 
 export class Nominations extends Component {
   constructor(props) {
     super(props)
 
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
+
+  handleClick(movie) {
+    console.log(movie)
   }
 
   render() {
+    const {nominatedMovies} = this.props;
+
     return (
-      <h2>Nominations</h2>
+      <div className='nominations-container'>
+        <h2>Nominations</h2>
+        {nominatedMovies.length > 0 && <MoviesList
+                                          movies={nominatedMovies}
+                                          buttonName= "Remove"
+                                          onClick={this.handleClick}
+                                        /> 
+        }
+        
+      </div>
+
+      
     )
   }
 }

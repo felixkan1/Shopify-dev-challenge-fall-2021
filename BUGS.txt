@@ -5,3 +5,7 @@ search something invalid -> prev results stay (should show nothing)
 
 2)Movie name too long, CSS to limit size of results
   FIXED
+
+3) clear trailing and leading white space
+
+4) 'ram' test cat returns 10 movies, example shows 3

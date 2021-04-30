@@ -11,10 +11,13 @@ export class Result extends Component {
       searchError: null
     }
 
+  this.handleClick = this.handleClick.bind(this)
+
   }
 
   //dont use componenet did mount
   componentDidUpdate(prevProps){
+    //if condition may have to change to nominationlist change 
     if(this.props.searchTerm !== prevProps.searchTerm) {
       const searchTerm = this.props.searchTerm.replace(/\s/g, '+');
       getMovies(searchTerm)
@@ -26,7 +29,7 @@ export class Result extends Component {
             });
           }else {
             this.setState({
-              searchError: "Invalid Search",
+              searchError: `No Results for "${this.props.searchTerm}"`,
               searchResult: null
             })
           }
@@ -34,11 +37,18 @@ export class Result extends Component {
     }
 
   }
+  //nominate button
+  handleClick(movie) {
+    //const movie = (get button to pas movie obj)
+    this.props.onClick(movie);
+  }
+
+
 
 
   render() {
     const {searchResult, searchError} = this.state;
-    const searchTerm = this.props.searchTerm;
+    const {searchTerm, nominatedMovies} = this.props;
 
     return (
       <div className='result-container'>
@@ -52,7 +62,9 @@ export class Result extends Component {
 
         {searchResult && <MoviesList 
                             movies = {searchResult}
+                            nominatedMovies = {nominatedMovies}
                             buttonName = "Nominate"
+                            onClick = {this.handleClick}
                           />
         }
       </div>

@@ -1,16 +1,33 @@
-import React, {Component} from 'react'
+import React from 'react';
 
 
-export function MoviesList ({movies, buttonName}) {
+export function MoviesList ({movies, buttonName, onClick, nominatedMovies}) {
+  // const nominatedIDs = nominatedMovies.map((movie) => {
+  //   return movie.imdbID;
+  // })
+  let nominatedIDs = [];
+  if(nominatedMovies){
+    nominatedIDs = nominatedMovies.map((movie) => {
+      return movie.imdbID;
+    })
+  }
+
+  console.log("nominated movies: ",nominatedIDs);
+
   return(
     <ul className='movie-list'>
-      {movies.map((movie, index) => {
-        const{Title, Year} = movie;
-
+      {movies.map((movie) => {
+        const{Title, Year, imdbID} = movie;
+        const disabled = nominatedIDs.includes(imdbID)
         return (
-          <li className='movie-item' key={ Title }> 
-            { Title } ({ Year }) &nbsp; 
-            <button>{buttonName}</button>
+          <li className='movie-item' key={imdbID}> 
+            {Title} ({Year}) &nbsp; 
+            <button 
+              onClick = {() => onClick(movie)}
+              disabled = {disabled}
+              >
+                {buttonName}
+              </button>
           </li>
         );
 

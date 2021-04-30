@@ -14,15 +14,26 @@ export default class App extends Component {
     }
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleAddNomination = this.handleAddNomination.bind(this)
   }
 
   //methods to add nomination, remove nomination, handle search Change
   handleSearchChange(searchTerm) {
     this.setState({searchTerm});
   }
+
+  handleAddNomination(movie) {
+    this.setState({
+      nominatedMovies: [...this.state.nominatedMovies, movie]
+    })
+  }
+
+  handleRemoveNomination(movie) {
+    
+  }
   
   render(){
-    const {searchTerm} = this.state;
+    const {searchTerm, nominatedMovies} = this.state;
 
 
     return (
@@ -37,8 +48,12 @@ export default class App extends Component {
             <div className="flex-row">
               <Result
                 searchTerm={searchTerm}
+                onClick={this.handleAddNomination}
+                nominatedMovies={nominatedMovies}
               />
-              <Nominations/>
+              <Nominations
+                nominatedMovies={nominatedMovies}
+              />
             </div>
           </div>
         </div>

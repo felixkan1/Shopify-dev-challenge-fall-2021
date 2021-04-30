@@ -17,23 +17,45 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 /* Search Container */
 
 .search-container {
   width: 100%;
+  margin-bottom: 50px;
 }
 
 
 /* Movie Container */
 
 .movie-item {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 /* Results */
 .result-container {
-  max-width: 50%;
+  width: 45%;
+  background-color: rgba(19, 209, 114, 0.212);
+  height: 400px;
+  overflow: auto;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.result-container h2 {
+  margin-left: 15px;
+}
+/* Nominations */
+.nominations-container {
+  width: 45%;
+  background-color: rgba(196, 209, 19, 0.212);
+  overflow: auto;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.nominations-container h2 {
+  margin-left: 15px;
 }
