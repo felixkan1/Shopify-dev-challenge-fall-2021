@@ -77,7 +77,9 @@ export default class App extends Component {
             <div className="container">
               <div className='header'>
                 <h1>The Shoppies</h1>
-                <button className='btn-clear' onClick={this.toggleTheme}>💡</button>
+                <button className='btn-clear' onClick={this.toggleTheme}>
+                  {this.state.theme === 'light' ? '💡' : '🔦'}
+                </button>
               </div>
                 <Search
                   searchTerm={searchTerm}

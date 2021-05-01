@@ -19,7 +19,7 @@ export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resul
         const{Title, Year, imdbID} = movie;
         const disabled = (nominatedIDs.includes(imdbID) && resultList) || disableAll;
         return (
-            <MovieInfo resultList={resultList} movie={movie}  key={index}> 
+            <MovieInfo resultList={resultList} movie={movie} key={index}> 
             <li className='movie-item'> 
                 {Title} ({Year}) &nbsp; 
                 <button 

@@ -27,6 +27,7 @@ export class Nominations extends Component {
                                           onClick={this.handleClick}
                                         /> 
         }
+        {nominatedMovies.length === 0 && <p>&nbsp; You have not nomiated any movies! 🍿</p>}
         
       </div>
 

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-html {
+html, .container {
   height: 100%;
 }
+
 
 body, #root {
   margin: 0;
@@ -15,6 +16,12 @@ body, #root {
   color: #DADADA;
   background-color: #1c2022;
   min-height: 100%;
+  transition: all 0.25s linear;
+}
+
+.light {
+  min-height: 100%;
+  transition: all 0.25s linear;
 }
 
 .flex-row {
@@ -22,6 +29,7 @@ body, #root {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  height: 100%;
 }
 
 
@@ -43,12 +51,16 @@ body, #root {
   left: calc(100% - 3rem)
 }
 
+button:disabled {
+  opacity: 0.3;
+}
+
 .container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1000px;
+  max-width: 80%;
 }
 
 .btn-clear {
@@ -56,6 +68,12 @@ body, #root {
   background: transparent;
   left: 100%;
   color: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-clear:hover {
+  color:rgba(196, 209, 19, 0.712);
 }
 
 /* Search Container */
@@ -76,17 +94,25 @@ body, #root {
 .result-container {
   width: 45%;
   background-color: rgba(19, 209, 114, 0.212);
-  height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
+
+  overflow-y: visible;
+  overflow-x: visible;
   font-size: 15px;
   border-radius: 10px;
-
+  flex: 1;
 }
 
 .result-container ul {
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
+  padding-top: 20px; 
+  margin-top: -20px;
+  padding-bottom: 150px; 
+  margin-bottom: -150px;
+  padding-left: 120px; 
+  margin-left: -120px;
+  animation: slide-up 1s ease;
 }
 
 .result-container h2 {
@@ -97,10 +123,31 @@ body, #root {
   width: 45%;
   background-color: rgba(196, 209, 19, 0.212);
   overflow: auto;
-  height: 400px;
+  height: 600px;
   border-radius: 10px;
+  flex: 1;
+  margin-left: 20px;
 }
 
 .nominations-container h2 {
   margin-left: 15px;
+}
+
+.nominations-container ul {
+  padding-left: 120px; 
+  margin-left: -120px;
+  animation: slide-up 1s ease;
+}
+
+.hovering {
+  animation: slide-up 0.8s ease;
+}
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
