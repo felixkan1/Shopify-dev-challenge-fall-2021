@@ -11,6 +11,7 @@ html, .container {
   margin-bottom: -170px;
 }
 
+
 body, #root {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -21,12 +22,17 @@ body, #root {
   color: #DADADA;
   background-color: #1c2022;
   min-height: 100%;
-  transition: all 0.25s linear;
+  transition: all 0.2s linear;
 }
 
 .light {
   min-height: 100%;
-  transition: all 0.25s linear;
+  transition: all 0.2s linear;
+  background-color: #f3fcf42f;
+}
+
+h1 {
+  color: #008060;
 }
 
 .flex-row {
@@ -75,10 +81,12 @@ button:disabled {
   color: inherit;
   font-size: 1rem;
   font-weight: bold;
+  transition: all 0.2s linear;
 }
 
 .btn-clear:hover {
-  color:rgba(196, 209, 19, 0.712);
+  color:#008060;
+  transition: all 0.2s linear;
 }
 
 /* Search Container */
@@ -88,6 +96,27 @@ button:disabled {
   margin-bottom: 50px;
 }
 
+.search-bar {
+  border: 1px solid rgba(128, 128, 128, 0.233);
+  padding: 5px;
+}
+
+.search-container input {
+  width: 95%;
+  height: 100%;
+  font-size: 2rem;
+  border-radius: 3px;
+  border: none;
+}
+
+.search-container input:focus {
+  outline: none;
+}
+
+.search-container p {
+  color: rgb(7, 44, 35);
+  font-size: 2rem;
+}
 
 /* Movie Container */
 
@@ -98,7 +127,7 @@ button:disabled {
 /* Results */
 .result-container {
   width: 45%;
-  background-color: rgba(19, 209, 114, 0.212);
+  background-color: #EFFCFA;
 
   overflow-y: visible;
   overflow-x: visible;
@@ -118,6 +147,7 @@ button:disabled {
   padding-left: 120px; 
   margin-left: -120px;
   animation: opac 1s ease;
+  list-style: none;
 }
 
 .result-container h2 {
@@ -126,12 +156,22 @@ button:disabled {
 /* Nominations */
 .nominations-container {
   width: 45%;
-  background-color: rgba(196, 209, 19, 0.212);
+  background-color: #FBF7ED;
   overflow: auto;
   height: 35rem;
   border-radius: 10px;
   flex: 1;
   margin-left: 20px;
+  list-style: none;
+}
+
+.nominations-container p {
+  font-size: 1rem;
+  font-weight: 9000;   
+  text-shadow: 1px 0 #888888;
+  letter-spacing:0.5px;
+  font-weight:bold;
+
 }
 
 .nominations-container h2 {

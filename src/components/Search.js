@@ -17,16 +17,20 @@ export class Search extends React.Component {
     return(
       //use field set?
       <div className='search-container'>
-        <h3>Movie Title</h3>
-        <input
-          type='text'
-          id='searchTerm'
-          className='search-bar'
-          placeholder='Search for a Movie'
-          autoComplete='off'
-          value={this.props.searchTerm}
-          onChange={this.handleChange}
-        />
+        <h2>Movie Title</h2>
+        <p>Search for a movie and add it to your nominations!</p>
+        <div className='search-bar'>
+          <img src="https://img.icons8.com/android/24/000000/search.png"/>
+            <input
+              type='text'
+              id='searchTerm'
+              className='search-bar'
+              placeholder='ie. Harry Potter'
+              autoComplete='off'
+              value={this.props.searchTerm}
+              onChange={this.handleChange}
+            />
+        </div>
       </div>
     );
   }
