@@ -3,8 +3,13 @@
 
 html, .container {
   height: 100%;
+
 }
 
+.container {
+  padding-bottom: 170px; 
+  margin-bottom: -170px;
+}
 
 body, #root {
   margin: 0;
@@ -99,7 +104,7 @@ button:disabled {
   overflow-x: visible;
   font-size: 15px;
   border-radius: 10px;
-  flex: 1;
+  flex: 2;
 }
 
 .result-container ul {
@@ -108,11 +113,11 @@ button:disabled {
   overflow-y: auto;
   padding-top: 20px; 
   margin-top: -20px;
-  padding-bottom: 150px; 
-  margin-bottom: -150px;
+  padding-bottom: 100px; 
+  margin-bottom: -100px;
   padding-left: 120px; 
   margin-left: -120px;
-  animation: slide-up 1s ease;
+  animation: opac 1s ease;
 }
 
 .result-container h2 {
@@ -123,7 +128,7 @@ button:disabled {
   width: 45%;
   background-color: rgba(196, 209, 19, 0.212);
   overflow: auto;
-  height: 600px;
+  height: 35rem;
   border-radius: 10px;
   flex: 1;
   margin-left: 20px;
@@ -136,14 +141,14 @@ button:disabled {
 .nominations-container ul {
   padding-left: 120px; 
   margin-left: -120px;
-  animation: slide-up 1s ease;
+  animation: opac 1s ease;
 }
 
 .hovering {
-  animation: slide-up 0.8s ease;
+  animation: opac 0.8s ease;
 }
 
-@keyframes slide-up {
+@keyframes opac {
   0% {
       opacity: 0;
   }

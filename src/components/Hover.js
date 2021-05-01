@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
-const styles = {
-  hoverResult: {
-    width: '50%'
-  }
-}
+
 export class Hover extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +20,7 @@ export class Hover extends Component {
     const {children, resultList} = this.props;
     const {hovering} = this.state;
     return (
-      <div style={{width: resultList ? '50%' : '100%'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
+      <div style={{width: resultList ? '60%' : '100%'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
       >
         {children(hovering)}
       </div>

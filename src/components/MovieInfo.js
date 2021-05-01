@@ -20,7 +20,7 @@ const styles = {
     textAlign: 'center',
     fontSize: '14px',
     top: '-20px',
-    left: '150%',
+    left: '130%',
     marginLeft: '-80px',
 
   },
