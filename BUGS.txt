@@ -2,10 +2,14 @@ Results.js:
 1) 
 search something valid -> updates Results
 search something invalid -> prev results stay (should show nothing)
+FIXED
 
 2)Movie name too long, CSS to limit size of results
   FIXED
 
 3) clear trailing and leading white space
+FIXED
 
 4) 'ram' test cat returns 10 movies, example shows 3
+
+5) Placement of hover image outside of container

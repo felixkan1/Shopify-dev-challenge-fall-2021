@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import {getMovies} from '../utils/api'
-import {MoviesList} from './MovieList'
+import React, {Component} from 'react';
+import {getMovies} from '../utils/api';
+import {MoviesList} from './MovieList';
+import {MovieInfo} from './MovieInfo'
 
 export class Result extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export class Result extends Component {
   componentDidUpdate(prevProps) {
     //if condition may have to change to nominationlist change 
     if(this.props.searchTerm !== prevProps.searchTerm) {
-      const searchTerm = this.props.searchTerm.replace(/\s/g, '+');
+      const searchTerm = this.props.searchTerm.trim().replace(/\s/g, '+');
       getMovies(searchTerm)
         .then((movies) => {
           if(movies.Response === 'True'){

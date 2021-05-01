@@ -1,7 +1,7 @@
 import React from 'react';
+import {MovieInfo} from './MovieInfo';
 
-
-export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resultList, disableAll}) {
+export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resultList, disableAll=false}) {
   // const nominatedIDs = nominatedMovies.map((movie) => {
   //   return movie.imdbID;
   // })
@@ -15,19 +15,23 @@ export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resul
 
   return (
     <ul className='movie-list'>
-      {movies.map((movie) => {
+      {movies.map((movie, index) => {
         const{Title, Year, imdbID} = movie;
-        const disabled = nominatedIDs.includes(imdbID) && resultList || disableAll;
+        const disabled = (nominatedIDs.includes(imdbID) && resultList) || disableAll;
         return (
-          <li className='movie-item' key={imdbID}> 
-            {Title} ({Year}) &nbsp; 
-            <button 
-              onClick = {() => onClick(movie)}
-              disabled = {disabled}
-              >
-                {buttonName}
-              </button>
-          </li>
+            <MovieInfo resultList={resultList} movie={movie}  key={index}> 
+            <li className='movie-item'> 
+                {Title} ({Year}) &nbsp; 
+                <button 
+                  onClick = {() => onClick(movie)}
+                  disabled = {disabled}
+                  className='btn-clear'
+                  >
+                    {buttonName}
+                  </button>
+              </li>
+            </MovieInfo>
+        
         );
 
       })}

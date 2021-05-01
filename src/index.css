@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-body {
+
+html {
+  height: 100%;
+}
+
+body, #root {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.dark {
+  color: #DADADA;
+  background-color: #1c2022;
+  min-height: 100%;
 }
 
 .flex-row {
@@ -12,12 +24,38 @@ body {
   width: 100%;
 }
 
+
+.header {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.header h1 {
+  display: inline;
+}
+
+.header button {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  left: calc(100% - 3rem)
+}
+
 .container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1000px;
+}
+
+.btn-clear {
+  border: none;
+  background: transparent;
+  left: 100%;
+  color: inherit;
 }
 
 /* Search Container */
@@ -39,9 +77,16 @@ body {
   width: 45%;
   background-color: rgba(19, 209, 114, 0.212);
   height: 400px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-size: 15px;
   border-radius: 10px;
+
+}
+
+.result-container ul {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .result-container h2 {
