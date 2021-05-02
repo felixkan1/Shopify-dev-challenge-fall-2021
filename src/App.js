@@ -68,7 +68,7 @@ export default class App extends Component {
   
   
   render(){
-    const {searchTerm, nominatedMovies, displayBanner} = this.state;
+    const {searchTerm, nominatedMovies, displayBanner, theme} = this.state;
 
 
     return (
@@ -76,7 +76,7 @@ export default class App extends Component {
         <div className={this.state.theme}>
             <div className="container">
               <div className='header'>
-                <h1>The Shoppies</h1>
+                <h1>The Shoppies — </h1>
   
               </div>
                 <Search

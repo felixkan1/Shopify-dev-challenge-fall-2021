@@ -4,16 +4,17 @@ import {MoviesList} from './MovieList';
 
 export class Nominations extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-
-
+ 
+  
   handleClick(movie) {
     this.props.onClick(movie);
-  }
+  };
 
   render() {
     const {nominatedMovies} = this.props;
