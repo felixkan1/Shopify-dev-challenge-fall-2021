@@ -167,6 +167,7 @@ button:disabled {
   flex: 1;
   margin-left: 20px;
   list-style: none;
+  padding-right: 5px;
 }
 
 .nominations-container p {
@@ -190,6 +191,7 @@ button:disabled {
   margin-left: -120px;
   animation: opac 1s ease;
   list-style: none;
+  
 }
 
 .hovering {

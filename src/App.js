@@ -3,7 +3,6 @@ import './App.css';
 import {Search} from './components/Search';
 import {Result} from './components/Results';
 import {Nominations} from './components/Nominations';
-import {Banner} from './components/Banner';
 import {ThemeProvider} from './context/theme'
 
 export default class App extends Component {
@@ -84,6 +83,8 @@ export default class App extends Component {
                 <Search
                   searchTerm={searchTerm}
                   onSearchChange={this.handleSearchChange}
+                  displayBanner={displayBanner}
+                  nominatedMovies={nominatedMovies}
                 />
               <div className="flex-row">
                 <Result
@@ -97,7 +98,7 @@ export default class App extends Component {
                   onClick={this.handleRemoveNomination.bind(this)}
                 />
               </div>
-              {displayBanner && <Banner/>}
+              
             </div>
           </div>
       </ThemeProvider>

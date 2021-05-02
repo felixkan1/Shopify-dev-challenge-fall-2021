@@ -1,4 +1,5 @@
 import React from 'react';
+import {Banner} from './Banner';
 
 
 
@@ -14,13 +15,14 @@ export class Search extends React.Component {
     this.props.onSearchChange(searchTerm);
   }
   render(){
+    const {displayBanner} = this.props;
     return(
-      //use field set?
       <div className='search-container'>
         <h2>Movie Title</h2>
-        <p>Search for a movie and select your <span className='green'>Top 5</span> for nominations!</p>
+        {displayBanner && <Banner nominatedMovies={this.props.nominatedMovies}/>}
+        {!displayBanner &&<p>Search for a movie and select your <span className='green'>Top 5</span> for nominations!</p>}
         <div className='search-bar'>
-          <img src="https://img.icons8.com/android/24/000000/search.png"/>
+          <img src="https://img.icons8.com/android/24/000000/search.png" alt=""/>
             <input
               type='text'
               id='searchTerm'

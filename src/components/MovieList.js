@@ -25,8 +25,8 @@ export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resul
                   disabled = {disabled}
                   className='btn-clear'
                   >
-                    {buttonName === 'Nominate' && <img src='https://img.icons8.com/fluent/48/000000/pin3.png'/>}
-                    {buttonName !== 'Nominate' && <img src="https://img.icons8.com/ios/30/000000/xbox-x.png"/>}
+                    {buttonName === 'Nominate' && <img src='https://img.icons8.com/fluent/48/000000/pin3.png' alt="Nominate"/>}
+                    {buttonName !== 'Nominate' && <img src="https://img.icons8.com/ios/30/000000/xbox-x.png" alt="Remove"/>}
                 </button>             
               <li className='movie-item'> 
                 

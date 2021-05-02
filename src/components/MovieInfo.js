@@ -38,7 +38,7 @@ export function MovieInfo ({children, resultList, movie}) {
         <div style={styles.container}>
           {(hovering && resultList) && 
           <div style={styles.movieInfo} className='hovering'>
-            {Poster !== 'N/A' && <img style={styles.movieImage} src={Poster}></img>}
+            {Poster !== 'N/A' && <img style={styles.movieImage} src={Poster} alt=''></img>}
             {Poster === 'N/A' && <div><strong>Image Unavailable</strong></div>}
           </div>
           }

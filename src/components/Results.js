@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {getMovies} from '../utils/api';
 import {MoviesList} from './MovieList';
-import {MovieInfo} from './MovieInfo'
 
 export class Result extends Component {
   constructor(props) {
