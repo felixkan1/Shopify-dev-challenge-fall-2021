@@ -209,6 +209,8 @@ button:disabled {
 
 /* Banner */
 
+
+
 .nominations-container ul {
   max-width: 100%;
 }
@@ -219,4 +221,5 @@ button:disabled {
 
 .nominations-banner img {
   max-width: 90%;
+  max-height: 100%;
 }
