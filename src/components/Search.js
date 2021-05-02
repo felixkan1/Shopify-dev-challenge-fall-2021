@@ -18,7 +18,7 @@ export class Search extends React.Component {
       //use field set?
       <div className='search-container'>
         <h2>Movie Title</h2>
-        <p>Search for a movie and add it to your nominations!</p>
+        <p>Search for a movie and select your <span className='green'>Top 5</span> for nominations!</p>
         <div className='search-bar'>
           <img src="https://img.icons8.com/android/24/000000/search.png"/>
             <input

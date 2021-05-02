@@ -7,7 +7,7 @@ const styles = {
   container: {
     position: 'relative',
     display: 'flex',
-    marginLeft: '30px'
+    marginLeft: '15px'
   },
   movieInfo: {
     position: 'absolute',

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap');
 
 
 html, .container {
@@ -32,6 +32,10 @@ body, #root {
 }
 
 h1 {
+  color: #008060;
+}
+
+.green {
   color: #008060;
 }
 
@@ -118,17 +122,13 @@ button:disabled {
   font-size: 2rem;
 }
 
-/* Movie Container */
 
-.movie-item {
-  margin-bottom: 15px;
-}
+
 
 /* Results */
 .result-container {
   width: 45%;
   background-color: #EFFCFA;
-
   overflow-y: visible;
   overflow-x: visible;
   font-size: 15px;
@@ -150,6 +150,10 @@ button:disabled {
   list-style: none;
 }
 
+.result-container li {
+  padding-top: 10px;
+}
+
 .result-container h2 {
   margin-left: 15px;
 }
@@ -167,11 +171,14 @@ button:disabled {
 
 .nominations-container p {
   font-size: 1rem;
-  font-weight: 9000;   
   text-shadow: 1px 0 #888888;
   letter-spacing:0.5px;
-  font-weight:bold;
+  margin-left: 10px;
+}
 
+.nominations-container li {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .nominations-container h2 {
@@ -182,6 +189,7 @@ button:disabled {
   padding-left: 120px; 
   margin-left: -120px;
   animation: opac 1s ease;
+  list-style: none;
 }
 
 .hovering {

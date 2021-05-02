@@ -20,15 +20,18 @@ export function MoviesList ({movies, buttonName, onClick, nominatedMovies, resul
         const disabled = (nominatedIDs.includes(imdbID) && resultList) || disableAll;
         return (
             <MovieInfo resultList={resultList} movie={movie} key={index}> 
-            <li className='movie-item'> 
-                {Title} ({Year}) &nbsp; 
-                <button 
+              <button 
                   onClick = {() => onClick(movie)}
                   disabled = {disabled}
                   className='btn-clear'
                   >
-                    {buttonName}
-                  </button>
+                    {buttonName === 'Nominate' && <img src='https://img.icons8.com/fluent/48/000000/pin3.png'/>}
+                    {buttonName !== 'Nominate' && <img src="https://img.icons8.com/ios/30/000000/xbox-x.png"/>}
+                </button>             
+              <li className='movie-item'> 
+                
+                {Title} ({Year}) &nbsp; 
+               
               </li>
             </MovieInfo>
         
