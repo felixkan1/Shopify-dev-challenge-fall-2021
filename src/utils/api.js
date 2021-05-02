@@ -1,7 +1,7 @@
 //for testing purposes (delete this when you upload)
 const fetch = require("node-fetch")
 
-const MOVIES_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=4a184c3c&r=json&type=movie&s='
+const MOVIES_URL = 'https://www.omdbapi.com/?i=tt3896198&apikey=4a184c3c&r=json&type=movie&s='
 
 function getMoviesUrl(movie) {
   return `${MOVIES_URL}${movie}`;
