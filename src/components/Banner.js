@@ -11,9 +11,9 @@ export function Banner ({nominatedMovies}) {
         <ul className='flex-row'>
           {nominatedMovies.map((movie, index) => {
             return(
-              <li key={index}>
+              <div key={index}>
                 <img alt='Image Unavailable' src={movie.Poster}></img>
-              </li>
+              </div>
             )
           })}
         </ul>

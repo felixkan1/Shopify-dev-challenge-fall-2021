@@ -28,11 +28,13 @@ export default class App extends Component {
     if(this.state.nominatedMovies.length !== prevState.nominatedMovies.length) {
       if(this.state.nominatedMovies.length === 5) {
         this.setState({
-          displayBanner: true
+          displayBanner: true,
+          theme: 'dark'
         });
       }else {
         this.setState({
-          displayBanner: false
+          displayBanner: false,
+          theme: 'light'
         });
       };
     };
@@ -70,18 +72,15 @@ export default class App extends Component {
 
 
     return (
-    
       <ThemeProvider value={this.state.theme}>
         <div className={this.state.theme}>
             <div className="container">
               <div className='header'>
                 <h1>The Shoppies</h1>
-                <button className='btn-clear' onClick={this.toggleTheme}>
-                  {this.state.theme === 'light' ? '💡' : '🔦'}
-                </button>
+  
               </div>
                 <Search
-                  searchTerm={searchTerm}
+                  searchTerm={searchTerm} 
                   onSearchChange={this.handleSearchChange}
                   displayBanner={displayBanner}
                   nominatedMovies={nominatedMovies}

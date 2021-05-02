@@ -206,3 +206,17 @@ button:disabled {
       opacity: 1;
   }
 }
+
+/* Banner */
+
+.nominations-container ul {
+  max-width: 100%;
+}
+
+.nominations-banner ul div {
+  flex:1;
+}
+
+.nominations-banner img {
+  max-width: 90%;
+}
