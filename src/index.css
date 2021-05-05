@@ -113,7 +113,7 @@ div.search-bar {
 }
 
 .search-bar-light {
-  width: 90%;
+  width: 80%;
   height: 100%;
   font-size: 2rem;
   border-radius: 3px;
@@ -121,7 +121,7 @@ div.search-bar {
 }
 
 .search-bar-dark {
-  width: 90%;
+  width: 80%;
   height: 100%;
   font-size: 2rem;
   border-radius: 3px;
