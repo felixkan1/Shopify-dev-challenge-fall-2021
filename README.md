@@ -1,6 +1,7 @@
 # Shopify Frontend Fall Internship Challenge 2021
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Demo] (https://shopify-challenge-felix-kan.netlify.app/)
 
 ## Available Scripts
 
