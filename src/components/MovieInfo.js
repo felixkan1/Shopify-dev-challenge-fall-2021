@@ -32,11 +32,12 @@ const styles = {
 
 export function MovieInfo ({children, resultList, movie}) { 
   const {Poster} = movie;
+  let mql = window.matchMedia('(min-width: 768px)');
   return(
     <Hover resultList={resultList}>
       {(hovering) => (
         <div style={styles.container}>
-          {(hovering && resultList) && 
+          {(hovering && resultList && mql.matches) && 
           <div style={styles.movieInfo} className='hovering'>
             {Poster !== 'N/A' && <img style={styles.movieImage} src={Poster} alt=''></img>}
             {Poster === 'N/A' && <div><strong>Image Unavailable</strong></div>}

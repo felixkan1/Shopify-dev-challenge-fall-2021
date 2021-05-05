@@ -16,6 +16,7 @@ export function Banner ({nominatedMovies}) {
     <React.Fragment>
       <h1>You have nominated 5 movies:</h1>
       <p>Thanks for Participating!</p>
+      <p>To modify your list, remove from nominations</p>
       <div className='nominations-banner'>
         
           {nominatedMovies.map((movie, index) => {

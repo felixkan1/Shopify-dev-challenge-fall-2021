@@ -41,7 +41,7 @@ h1 {
 
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   height: 100%;
@@ -102,6 +102,8 @@ button:disabled {
 
 .search-container h2 {
   color: black;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 
@@ -111,7 +113,7 @@ div.search-bar {
 }
 
 .search-bar-light {
-  width: 95%;
+  width: 90%;
   height: 100%;
   font-size: 2rem;
   border-radius: 3px;
@@ -119,7 +121,7 @@ div.search-bar {
 }
 
 .search-bar-dark {
-  width: 95%;
+  width: 90%;
   height: 100%;
   font-size: 2rem;
   border-radius: 3px;
@@ -144,7 +146,8 @@ div.search-bar {
 
 /* Results */
 .result-container {
-  width: 45%;
+  width: 100%;
+  min-height: 250px;
   background-color: #EFFCFA;
   overflow-y: visible;
   overflow-x: visible;
@@ -172,6 +175,8 @@ div.search-bar {
   list-style: none;
 }
 
+
+
 .result-container li {
   padding-top: 10px;
 }
@@ -181,15 +186,14 @@ div.search-bar {
 }
 /* Nominations */
 .nominations-container {
-  width: 45%;
+  width: 100%;
   background-color: #FBF7ED;
   overflow: auto;
-  height: 35rem;
+  height: 25rem;
   border-radius: 10px;
+  margin-top: 25px;
   flex: 1;
-  margin-left: 20px;
   list-style: none;
-  padding-right: 5px;
   transition: all 0.25s ease;
 }
 
@@ -238,18 +242,13 @@ div.search-bar {
 
 
 
-.nominations-banner ul {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  padding: 0;
-  justify-content: space-between;
-}
+
 
 .nominations-banner {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   flex:1;
   padding:3px;
 }
@@ -270,3 +269,290 @@ div.search-bar {
   height: 15rem;
   object-fit: fill;
 }
+
+
+@media (min-width:768px) {
+  
+  html, .container {
+    height: 100%;
+  
+  }
+  
+  .container {
+    padding-bottom: 170px; 
+    margin-bottom: -170px;
+  }
+  
+  
+  body, #root {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+  }
+  
+  .dark {
+    color: #DADADA;
+    background-color: #202222;
+    min-height: 100%;
+    transition: all 0.2s linear;
+  }
+  
+  .light {
+    min-height: 100%;
+    transition: all 0.2s linear;
+    background-color: #f3fcf42f;
+  }
+  
+  h1 {
+    color: #008060;
+  }
+  
+  .green {
+    color: #008060;
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .header {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+    padding-top: 2rem;
+  }
+  
+  .header h1 {
+    color: #004C3F;
+    vertical-align: baseline;
+    margin: 0;
+  }
+  
+  .header button {
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+    left: calc(100% - 3rem)
+  }
+  
+  button:disabled {
+    opacity: 0.3;
+  }
+  
+  .container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+  }
+  
+  .btn-clear {
+    border: none;
+    background: transparent;
+    left: 100%;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s linear;
+  }
+  
+  
+  
+  /* Search Container */
+  
+  .search-container {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  .search-container h2 {
+    color: black;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  
+  div.search-bar {
+    border: 1px solid rgba(128, 128, 128, 0.233);
+    padding: 5px;
+  }
+  
+  .search-bar-light {
+    width: 95%;
+    height: 100%;
+    font-size: 2rem;
+    border-radius: 3px;
+    border: none;
+  }
+  
+  .search-bar-dark {
+    width: 95%;
+    height: 100%;
+    font-size: 2rem;
+    border-radius: 3px;
+    border: none;
+    background-color: #1c2022;
+    color: #DADADA;
+  }
+  
+  .search-bar-light:focus {
+    outline-color: #008060;
+  }
+  
+  .search-bar-dark {
+    outline-color: #008060;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Results */
+  .result-container {
+    width: 45%;
+    background-color: #EFFCFA;
+    overflow-y: visible;
+    overflow-x: visible;
+    font-size: 15px;
+    border-radius: 10px;
+    flex: 2;
+    transition: all 0.1s ease;
+  }
+  
+  .result-container:hover {
+    box-shadow: 0px 0px 5px 3px #ccc;
+  }
+  
+  .result-container ul {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 20px; 
+    margin-top: -20px;
+    padding-bottom: 100px; 
+    margin-bottom: -100px;
+    padding-left: 120px; 
+    margin-left: -120px;
+    animation: opac 1s ease;
+    list-style: none;
+  }
+  
+  .result-container li {
+    padding-top: 10px;
+  }
+  
+  .result-container h2 {
+    margin-left: 15px;
+  }
+  /* Nominations */
+  .nominations-container {
+    width: 45%;
+    background-color: #FBF7ED;
+    overflow: visible;
+    border-radius: 10px;
+    flex: 1;
+    margin-left: 20px;
+    list-style: none;
+    padding-right: 5px;
+    transition: all 0.25s ease;
+    margin-top: 0;
+    height: 120%;
+  }
+
+
+  
+  .nominations-container:hover {
+    box-shadow: 0px 0px 5px 3px #ccc;
+  }
+  
+  .nominations-container p {
+    font-size: 1rem;
+    text-shadow: 1px 0 #888888;
+    letter-spacing:0.5px;
+    margin-left: 10px;
+  }
+  
+  .nominations-container li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .nominations-container h2 {
+    margin-left: 15px;
+  }
+  
+  .nominations-container ul {
+    padding-left: 120px; 
+    margin-left: -120px;
+    animation: opac 1s ease;
+    list-style: none;
+    
+  }
+  
+  .hovering {
+    animation: opac 0.8s ease;
+  }
+  
+  @keyframes opac {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  
+  /* Banner */
+  
+  
+  
+  .nominations-banner ul {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    padding: 0;
+    justify-content: space-between;
+  }
+  
+  .nominations-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex:1;
+    padding:3px;
+  }
+  
+  .banner-title {
+    font-size: 0.8rem;
+    width: 10rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .banner-title span {
+    font-size: 1.8rem;
+  }
+  
+  .nominations-banner img {
+    width:  10rem;
+    height: 15rem;
+    object-fit: fill;
+  }
+  
+  
+  
+
+
+
+}
+
+

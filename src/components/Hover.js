@@ -19,8 +19,9 @@ export class Hover extends Component {
   render() {
     const {children, resultList} = this.props;
     const {hovering} = this.state;
+    const mql = window.matchMedia('(min-width: 768px)');
     return (
-      <div style={{width: resultList ? '60%' : '100%'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
+      <div style={{width: resultList&&mql.matches ? '60%' : '100%'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
       >
         {children(hovering)}
       </div>
